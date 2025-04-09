@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+.env
+
+# VS Code (just in case)
+.vscode/
+
+# PyCharm
+.idea/
+
+# SQLite DBs (optional)
+*.db
+*.sqlite3
+site.db
