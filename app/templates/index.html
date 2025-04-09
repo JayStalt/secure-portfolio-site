@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Home - Secure Portfolio{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <h1>Welcome to Jamison's Secure Portfolio</h1>
+    <p>
+        {% if current_user.is_authenticated %}
+            Logged in as <strong>{{ current_user.username }}</strong>.
+        {% else %}
+            You are not logged in.
+        {% endif %}
+    </p>
+
+    <p>This site was built with Flask and secured using best practices like hashed passwords, CSRF protection, and
+        defense against common web vulnerabilities.</p>
+{% endblock %}
