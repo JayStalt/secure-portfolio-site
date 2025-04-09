@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, flash
-from app.forms import LoginForm
-from app.models import User
-from app import db, bcrypt
+from __init__.forms import LoginForm
+from __init__.models import User
+from __init__ import db, bcrypt
 from flask_login import login_user, logout_user, login_required
 
 main = Blueprint('main', __name__)
