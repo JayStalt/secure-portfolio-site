@@ -47,3 +47,12 @@ def register():
         return redirect(url_for('main.login'))
 
     return render_template('register.html', form=form)
+
+@main.route('/dashboard')
+@login_required
+def dashboard():
+    if current_user.email != 'admin@example.com' :
+        flash('Access denied: Admins only.', 'danger')
+        return redirect(url_for('main.home'))
+
+    return render_template('dashboard.html')
