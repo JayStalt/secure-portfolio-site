@@ -37,7 +37,7 @@ A secure full-stack portfolio application built with Flask, featuring user authe
 ## 🛠 Local Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/secure-portfolio-site.git
+git clone https://github.com/JayStalt/secure-portfolio-site
 cd secure-portfolio-site
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
