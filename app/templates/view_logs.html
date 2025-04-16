@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Security Logs{% endblock %}
+
+{% block content %}
+<h2>Security Logs</h2>
+
+<pre style="background: #111; color: #0f0; padding: 1rem; overflow-x: auto; max-height: 500px;">
+{% for line in logs %}
+{{ line.strip() }}
+{% endfor %}
+</pre>
+
+{% endblock %}

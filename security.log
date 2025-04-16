@@ -1,0 +1,90 @@
+[2025-04-16 14:11:34,843] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-16 14:11:34,843] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-16 14:11:34,844] INFO:  * Restarting with stat
+[2025-04-16 14:11:35,150] WARNING:  * Debugger is active!
+[2025-04-16 14:11:35,152] INFO:  * Debugger PIN: 141-073-717
+[2025-04-16 14:11:44,496] INFO: 127.0.0.1 - - [16/Apr/2025 14:11:44] "GET /admin/projects HTTP/1.1" 200 -
+[2025-04-16 14:11:44,598] INFO: 127.0.0.1 - - [16/Apr/2025 14:11:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:12:03,360] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:03] "[32mGET /logout HTTP/1.1[0m" 302 -
+[2025-04-16 14:12:03,449] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:03] "GET / HTTP/1.1" 200 -
+[2025-04-16 14:12:03,622] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:12:05,501] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:05] "GET /login HTTP/1.1" 200 -
+[2025-04-16 14:12:05,559] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:12:08,009] INFO: Successful login: admin@example.com
+[2025-04-16 14:12:08,009] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+[2025-04-16 14:12:08,129] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:08] "GET / HTTP/1.1" 200 -
+[2025-04-16 14:12:08,537] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:12:17,692] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:17] "[32mGET /logout HTTP/1.1[0m" 302 -
+[2025-04-16 14:12:17,769] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:17] "GET / HTTP/1.1" 200 -
+[2025-04-16 14:12:17,956] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:12:20,013] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:20] "GET /login HTTP/1.1" 200 -
+[2025-04-16 14:12:20,316] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:12:22,825] INFO: Failed login attempt for email: admin@example.com
+[2025-04-16 14:12:22,825] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:22] "POST /login HTTP/1.1" 200 -
+[2025-04-16 14:12:22,836] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:12:31,179] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:31] "GET /register HTTP/1.1" 200 -
+[2025-04-16 14:12:31,253] INFO: 127.0.0.1 - - [16/Apr/2025 14:12:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:13:19,414] INFO: New user registered: stalt001@cougars.csusm.edu
+[2025-04-16 14:13:19,414] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:19] "[32mPOST /register HTTP/1.1[0m" 302 -
+[2025-04-16 14:13:19,417] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:19] "GET /login HTTP/1.1" 200 -
+[2025-04-16 14:13:19,501] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:13:37,721] INFO: Successful login: stalt001@cougars.csusm.edu
+[2025-04-16 14:13:37,721] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+[2025-04-16 14:13:37,724] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:37] "GET / HTTP/1.1" 200 -
+[2025-04-16 14:13:37,801] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:13:47,460] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:47] "[32mGET /logout HTTP/1.1[0m" 302 -
+[2025-04-16 14:13:47,529] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:47] "GET / HTTP/1.1" 200 -
+[2025-04-16 14:13:47,731] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:13:49,176] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:49] "GET /login HTTP/1.1" 200 -
+[2025-04-16 14:13:49,479] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:13:51,221] INFO: Successful login: admin@example.com
+[2025-04-16 14:13:51,222] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+[2025-04-16 14:13:51,225] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:51] "GET / HTTP/1.1" 200 -
+[2025-04-16 14:13:51,299] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:13:54,656] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:54] "GET /projects HTTP/1.1" 200 -
+[2025-04-16 14:13:54,738] INFO: 127.0.0.1 - - [16/Apr/2025 14:13:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:14:00,123] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:00] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-16 14:14:00,426] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:14:12,887] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:12] "GET /admin/projects/new HTTP/1.1" 200 -
+[2025-04-16 14:14:12,957] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:14:28,092] INFO: Admin admin@example.com added project: New Project
+[2025-04-16 14:14:28,092] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:28] "[32mPOST /admin/projects/new HTTP/1.1[0m" 302 -
+[2025-04-16 14:14:28,096] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:28] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-16 14:14:28,335] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:14:32,314] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:32] "GET /projects HTTP/1.1" 200 -
+[2025-04-16 14:14:32,613] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:14:44,682] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:44] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-16 14:14:44,769] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:14:48,651] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:48] "GET /admin/projects HTTP/1.1" 200 -
+[2025-04-16 14:14:48,953] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:14:52,014] INFO: Admin admin@example.com deleted project ID 2
+[2025-04-16 14:14:52,015] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:52] "[32mGET /admin/projects/delete/2 HTTP/1.1[0m" 302 -
+[2025-04-16 14:14:52,323] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:52] "GET /admin/projects HTTP/1.1" 200 -
+[2025-04-16 14:14:52,651] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:14:54,804] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:54] "GET /projects HTTP/1.1" 200 -
+[2025-04-16 14:14:54,879] INFO: 127.0.0.1 - - [16/Apr/2025 14:14:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:30:12,565] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-16 14:30:12,565] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-16 14:30:12,566] INFO:  * Restarting with stat
+[2025-04-16 14:30:12,876] WARNING:  * Debugger is active!
+[2025-04-16 14:30:12,878] INFO:  * Debugger PIN: 141-073-717
+[2025-04-16 14:30:21,007] INFO: 127.0.0.1 - - [16/Apr/2025 14:30:21] "GET /admin/logs HTTP/1.1" 200 -
+[2025-04-16 14:30:21,119] INFO: 127.0.0.1 - - [16/Apr/2025 14:30:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:30:54,151] INFO: 127.0.0.1 - - [16/Apr/2025 14:30:54] "GET / HTTP/1.1" 200 -
+[2025-04-16 14:30:54,260] INFO: 127.0.0.1 - - [16/Apr/2025 14:30:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:30:55,697] INFO: 127.0.0.1 - - [16/Apr/2025 14:30:55] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-16 14:30:56,012] INFO: 127.0.0.1 - - [16/Apr/2025 14:30:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:31:01,547] INFO: 127.0.0.1 - - [16/Apr/2025 14:31:01] "GET /admin/logs HTTP/1.1" 200 -
+[2025-04-16 14:31:01,652] INFO: 127.0.0.1 - - [16/Apr/2025 14:31:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:34:40,873] INFO: 127.0.0.1 - - [16/Apr/2025 14:34:40] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-16 14:34:40,963] INFO: 127.0.0.1 - - [16/Apr/2025 14:34:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:34:57,144] INFO: 127.0.0.1 - - [16/Apr/2025 14:34:57] "GET /admin/projects HTTP/1.1" 200 -
+[2025-04-16 14:34:57,451] INFO: 127.0.0.1 - - [16/Apr/2025 14:34:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:35:02,565] INFO: 127.0.0.1 - - [16/Apr/2025 14:35:02] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-16 14:35:02,641] INFO: 127.0.0.1 - - [16/Apr/2025 14:35:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:35:05,764] INFO: 127.0.0.1 - - [16/Apr/2025 14:35:05] "GET /projects HTTP/1.1" 200 -
+[2025-04-16 14:35:06,076] INFO: 127.0.0.1 - - [16/Apr/2025 14:35:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:35:07,950] INFO: 127.0.0.1 - - [16/Apr/2025 14:35:07] "GET / HTTP/1.1" 200 -
+[2025-04-16 14:35:08,040] INFO: 127.0.0.1 - - [16/Apr/2025 14:35:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

@@ -7,6 +7,7 @@ from app.models import User
 from app import db, bcrypt
 from flask_login import login_user, logout_user, login_required
 from flask_login import current_user
+from app.logger import log_event
 
 main = Blueprint('main', __name__)
 
@@ -19,12 +20,16 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
+
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
-            flash('Logged in successfully!', 'Success')
+            log_event(f"Successful login: {user.email}")  # ✅ Logging success
+            flash('Logged in successfully!', 'success')
             return redirect(url_for('main.home'))
         else:
+            log_event(f"Failed login attempt for email: {form.email.data}")  # Logging failure
             flash('Login unsuccessful. Please check email and password', 'danger')
+
     return render_template('login.html', form=form)
 
 @main.route('/logout')
@@ -45,6 +50,7 @@ def register():
         user = User(username=form.username.data, email=form.email.data, password=hashed_pw)
         db.session.add(user)
         db.session.commit()
+        log_event(f"New user registered: {form.email.data}")
         flash('Your account has been created! You can now log in.', 'success')
         return redirect(url_for('main.login'))
 
@@ -77,6 +83,7 @@ def add_project():
         )
         db.session.add(project)
         db.session.commit()
+        log_event(f"Admin {current_user.email} added project: {form.title.data}")
         flash('Project added successfully!', 'success')
         return redirect(url_for('main.dashboard'))
 
@@ -116,6 +123,7 @@ def edit_project(project_id):
         project.image_url = form.image_url.data
         project.project_url = form.project_url.data
         db.session.commit()
+        log_event(f"Admin {current_user.email} edited project ID {project_id}")
         flash('Project updated successfully!', 'success')
         return redirect(url_for('main.admin_projects'))
 
@@ -138,5 +146,22 @@ def delete_project(project_id):
     project = Project.query.get_or_404(project_id)
     db.session.delete(project)
     db.session.commit()
+    log_event(f"Admin {current_user.email} deleted project ID {project_id}")
     flash('Project deleted.', 'info')
     return redirect(url_for('main.admin_projects'))
+
+@main.route('/admin/logs')
+@login_required
+def view_logs():
+    if current_user.email != 'admin@example.com':
+        flash('Access denied: Admins only.', 'danger')
+        return redirect(url_for('main.home'))
+
+    try:
+        with open('security.log', 'r') as log_file:
+            # Show last 50 lines (adjust as needed)
+            lines = log_file.readlines()[-50:]
+    except FileNotFoundError:
+        lines = ['No logs found.']
+
+    return render_template('view_logs.html', logs=lines)
