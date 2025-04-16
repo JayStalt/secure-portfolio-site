@@ -8,6 +8,7 @@
 <body>
 <nav>
     <a href="{{ url_for('main.home') }}">Home</a>
+    <a href="{{ url_for('main.about_me') }}">About</a>
     <a href="{{ url_for('main.projects') }}">Projects</a>
     {% if current_user.is_authenticated %}
     {% if current_user.email == 'admin@example.com' %}

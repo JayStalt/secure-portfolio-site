@@ -88,3 +88,17 @@
 [2025-04-16 14:35:06,076] INFO: 127.0.0.1 - - [16/Apr/2025 14:35:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 [2025-04-16 14:35:07,950] INFO: 127.0.0.1 - - [16/Apr/2025 14:35:07] "GET / HTTP/1.1" 200 -
 [2025-04-16 14:35:08,040] INFO: 127.0.0.1 - - [16/Apr/2025 14:35:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:56:16,190] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-16 14:56:16,190] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-16 14:56:16,191] INFO:  * Restarting with stat
+[2025-04-16 14:56:16,493] WARNING:  * Debugger is active!
+[2025-04-16 14:56:16,495] INFO:  * Debugger PIN: 141-073-717
+[2025-04-16 14:56:24,507] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:24] "GET / HTTP/1.1" 200 -
+[2025-04-16 14:56:24,604] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:56:26,459] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:26] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-16 14:56:26,772] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:56:29,241] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:29] "GET /admin/logs HTTP/1.1" 200 -
+[2025-04-16 14:56:29,298] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 14:56:52,096] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:52] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-16 14:56:52,186] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

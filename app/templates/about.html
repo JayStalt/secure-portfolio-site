@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+    <section style="padding: 2rem 1rem; text-align: center;">
+        <h1>👋 About Me</h1>
+        <p style="max-width: 600px; margin: 1rem auto;">
+            I'm <strong>Jamison Stalter</strong> — a USMC veteran, cybersecurity graduate student, and full-stack
+            developer.
+            I built this secure portfolio platform from scratch to highlight my technical strengths, clean code
+            practices, and real-world deployment skills.
+        </p>
+
+        <a href="{{ url_for('main.projects') }}"
+           style="display: inline-block; padding: 0.75rem 1.5rem; margin-top: 1rem; background: #333; color: white; border-radius: 5px; text-decoration: none;">
+            View My Projects
+        </a>
+    </section>
+{% endblock %}

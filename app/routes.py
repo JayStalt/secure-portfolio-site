@@ -165,3 +165,8 @@ def view_logs():
         lines = ['No logs found.']
 
     return render_template('view_logs.html', logs=lines)
+
+
+@main.route('/about')
+def about_me():
+    return render_template('about.html')
