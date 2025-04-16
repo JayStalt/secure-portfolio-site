@@ -1,47 +1,44 @@
-# Secure Portfolio Site 🔐
+# 🔐 Secure Portfolio Website
 
-A personal portfolio built with Flask that showcases my projects, experience, and resume—while also demonstrating secure full-stack web development practices aligned with the OWASP Top 10.
+A secure full-stack portfolio application built with Flask, featuring user authentication, admin-only project management, and real-time security logging. Designed to showcase your work and cybersecurity skills in one clean platform.
+
+[🌐 View Live Demo]([[https://your-live-url.onrender.com](https://secure-portfolio-site.onrender.com))
 
 ---
 
 ## 🚀 Features
 
-- 🔐 Secure user authentication with hashed passwords
-- 🧪 Defense against SQL Injection, XSS, and CSRF
-- 👤 Role-based access control (admin vs public)
-- 📝 Admin dashboard for content updates
-- 📄 Public project gallery & contact form
-- 📦 Deployed with environment-based secrets and logging
+- ✅ User authentication (Login, Logout, Register)
+- 🔐 Role-based access control (`admin@example.com`)
+- 🧱 Admin dashboard with project CRUD (create/edit/delete)
+- 📂 Public project portfolio page
+- 📋 Real-time security logging (viewable in admin panel)
+- ☁️ Deployed using [Render](https://render.com)
+- 🌱 Environment configuration via `.env`
 
 ---
 
-## 🔧 Tech Stack
+## 🧰 Tech Stack
 
-- **Backend:** Flask, SQLAlchemy, Flask-Login, Flask-WTF
-- **Database:** SQLite (dev), PostgreSQL (planned for prod)
-- **Frontend:** HTML5, CSS3 (Tailwind/Bootstrap optional)
-- **Security:** bcrypt, CSRF tokens, environment variables
-- **Dev Tools:** PyCharm, GitHub, Docker (planned), GitHub Actions (CI/CD soon)
+- **Backend:** Flask, Flask-Login, SQLAlchemy
+- **Frontend:** Jinja2 Templates, HTML/CSS
+- **Database:** SQLite (via SQLAlchemy ORM)
+- **Deployment:** Gunicorn + Render
+- **Security Tools:** bcrypt, Flask-WTF, custom logging
 
 ---
 
-## ⚙️ Setup Instructions
+## 📸 Screenshots
+
+> _(To be added later)_
+
+---
+
+## 🛠 Local Setup
 
 ```bash
-# Clone the repo
 git clone https://github.com/YOUR_USERNAME/secure-portfolio-site.git
 cd secure-portfolio-site
-
-# Create virtual environment
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# Install dependencies
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
-
-# Configure environment variables
-cp .env.example .env
-# Then update .env with your own SECRET_KEY
-
-# Run the app
-python run.py
