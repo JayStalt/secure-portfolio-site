@@ -102,3 +102,23 @@
 [2025-04-16 14:56:29,298] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 [2025-04-16 14:56:52,096] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:52] "GET /dashboard HTTP/1.1" 200 -
 [2025-04-16 14:56:52,186] INFO: 127.0.0.1 - - [16/Apr/2025 14:56:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 15:16:47,024] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-16 15:16:47,024] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-16 15:16:47,024] INFO:  * Restarting with stat
+[2025-04-16 15:16:47,334] WARNING:  * Debugger is active!
+[2025-04-16 15:16:47,344] INFO:  * Debugger PIN: 141-073-717
+[2025-04-16 15:16:53,230] INFO: 127.0.0.1 - - [16/Apr/2025 15:16:53] "GET /about HTTP/1.1" 200 -
+[2025-04-16 15:16:53,331] INFO: 127.0.0.1 - - [16/Apr/2025 15:16:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 15:17:02,505] INFO: 127.0.0.1 - - [16/Apr/2025 15:17:02] "GET /projects HTTP/1.1" 200 -
+[2025-04-16 15:17:02,805] INFO: 127.0.0.1 - - [16/Apr/2025 15:17:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 15:17:14,882] INFO: 127.0.0.1 - - [16/Apr/2025 15:17:14] "GET /projects HTTP/1.1" 200 -
+[2025-04-16 15:17:14,893] INFO: 127.0.0.1 - - [16/Apr/2025 15:17:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 15:17:16,534] INFO: 127.0.0.1 - - [16/Apr/2025 15:17:16] "GET /about HTTP/1.1" 200 -
+[2025-04-16 15:17:16,840] INFO: 127.0.0.1 - - [16/Apr/2025 15:17:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 15:17:47,663] INFO: 127.0.0.1 - - [16/Apr/2025 15:17:47] "GET /about HTTP/1.1" 200 -
+[2025-04-16 15:17:47,674] INFO: 127.0.0.1 - - [16/Apr/2025 15:17:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-16 15:18:16,727] INFO:  * Detected change in 'C:\\Users\\jamis\\PycharmProjects\\secure_portfolio\\app\\routes.py', reloading
+[2025-04-16 15:18:16,767] INFO:  * Restarting with stat
+[2025-04-16 15:18:17,124] WARNING:  * Debugger is active!
+[2025-04-16 15:18:17,127] INFO:  * Debugger PIN: 141-073-717
