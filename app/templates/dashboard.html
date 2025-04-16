@@ -6,8 +6,11 @@
 <p>You have access to the secure admin dashboard.</p>
 
 <ul>
-    <li><a href="#">Manage Projects (Coming Soon)</a></li>
-    <li><a href="#">View Activity Logs (Coming Soon)</a></li>
-    <li><a href="#">Site Configuration (Coming Soon)</a></li>
+    <li><a href="#">Manage Projects </a></li>
+    <li><a href="#">View Activity Logs </a></li>
+    <li><a href="#">Site Configuration </a></li>
+    <li><a href="{{ url_for('main.add_project') }}">Add New Project</a></li>
+    <li><a href="{{ url_for('main.admin_projects') }}">Manage All Projects</a></li>
+
 </ul>
 {% endblock %}

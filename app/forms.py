@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 from app.models import User  # Make sure this import is at the top of forms.py
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Email
 
 class LoginForm(FlaskForm):
@@ -26,3 +26,11 @@ class RegisterForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user:
             raise ValidationError('That email is already registered.')
+
+
+class ProjectForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired(), Length(min=2, max=100)])
+    description = TextAreaField('Description', validators=[DataRequired()])
+    image_url = StringField('Image URL (optional)')
+    project_url = StringField('Project Link (optional)')
+    submit = SubmitField('Add Project')

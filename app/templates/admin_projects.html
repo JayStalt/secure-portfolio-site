@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Manage Projects{% endblock %}
+
+{% block content %}
+    <h2>Manage Projects</h2>
+
+    {% for project in projects %}
+        <div style="border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem;">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            {% if project.image_url %}
+                <img src="{{ project.image_url }}" alt="{{ project.title }}" width="400"><br>
+            {% endif %}
+            {% if project.project_url %}
+                <p><a href="{{ project.project_url }}" target="_blank">View Live</a></p>
+            {% endif %}
+            <a href="{{ url_for('main.edit_project', project_id=project.id) }}">✏️ Edit</a> |
+            <a href="{{ url_for('main.delete_project', project_id=project.id) }}"
+               onclick="return confirm('Delete this project?')">🗑 Delete</a>
+        </div>
+    {% endfor %}
+{% endblock %}
