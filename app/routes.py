@@ -125,8 +125,8 @@ def edit_project(project_id):
         project.title = form.title.data
         project.description = form.description.data
         project.image_url = form.image_url.data
-        project.external_link = form.project_url.data
-        project.category = form.category.data  # ✅ NEW
+        project.external_link = form.external_link.data  # ← updated here
+        project.category = form.category.data
         db.session.commit()
         flash('Project updated successfully!', 'success')
         return redirect(url_for('main.admin_projects'))
@@ -135,10 +135,11 @@ def edit_project(project_id):
         form.title.data = project.title
         form.description.data = project.description
         form.image_url.data = project.image_url
-        form.project_url.data = project.external_link
-        form.category.data = project.category  # ✅ NEW
+        form.external_link.data = project.external_link  # ← updated here
+        form.category.data = project.category
 
     return render_template('admin_edit_project.html', form=form, project=project)
+
 
 
 @main.route('/admin/projects/delete/<int:project_id>')

@@ -33,6 +33,7 @@ class ProjectForm(FlaskForm):
     description = TextAreaField('Description', validators=[DataRequired()])
     image_url = StringField('Image URL (optional)')
     project_url = StringField('Project Link (optional)')
+    external_link = StringField('External Link (optional)')
     category = SelectField('Category', choices=[
         ('cyber', 'Cyber'),
         ('fullstack', 'Full Stack Dev'),
