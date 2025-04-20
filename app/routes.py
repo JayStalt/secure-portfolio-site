@@ -24,6 +24,7 @@ main = Blueprint('main', __name__)
 def home():
     return render_template('index.html')
 
+
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -32,14 +33,26 @@ def login():
 
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
-            log_event(f"Successful login: {user.email}")  # ✅ Logging success
+            log_event(f"Successful login: {user.email}")
             flash('Logged in successfully!', 'success')
-            return redirect(url_for('main.home'))
+
+            # Check if there's a next page
+            next_page = request.args.get('next')
+            if next_page:
+                return redirect(next_page)
+
+            # Redirect admins to dashboard, users elsewhere
+            if user.email == 'admin@example.com':
+                return redirect(url_for('main.dashboard'))
+            else:
+                return redirect(url_for('main.projects'))  # or any public user page
+
         else:
-            log_event(f"Failed login attempt for email: {form.email.data}")  # Logging failure
+            log_event(f"Failed login attempt for email: {form.email.data}")
             flash('Login unsuccessful. Please check email and password', 'danger')
 
     return render_template('login.html', form=form)
+
 
 @main.route('/logout')
 @login_required
