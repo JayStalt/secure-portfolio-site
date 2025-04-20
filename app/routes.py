@@ -13,6 +13,9 @@ from collections import Counter
 from datetime import datetime
 import requests
 from flask import request
+import base64
+import json
+import jwt  # PyJWT
 
 main = Blueprint('main', __name__)
 
@@ -233,3 +236,32 @@ def header_analyzer():
             error = str(e)
 
     return render_template('tools_headers.html', headers=headers_result, error=error)
+
+@main.route('/tools/jwt', methods=['GET', 'POST'])
+@login_required
+def jwt_decoder():
+    decoded = {}
+    error = None
+
+    if request.method == 'POST':
+        token = request.form.get('jwt_token')
+
+        try:
+            # Split JWT manually
+            parts = token.split('.')
+            if len(parts) != 3:
+                raise ValueError("Invalid JWT structure (must have 3 parts).")
+
+            def decode_part(part):
+                padded = part + '=' * (-len(part) % 4)
+                return json.loads(base64.urlsafe_b64decode(padded))
+
+            decoded = {
+                "header": decode_part(parts[0]),
+                "payload": decode_part(parts[1]),
+                "signature": parts[2]
+            }
+        except Exception as e:
+            error = str(e)
+
+    return render_template('tools_jwt.html', decoded=decoded, error=error)
