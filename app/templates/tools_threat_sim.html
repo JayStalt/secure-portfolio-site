@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Threat Simulation{% endblock %}
+
+{% block content %}
+<h2>💣 Threat Simulation</h2>
+<p>This tool simulates how the app reacts to suspicious inputs like XSS or SQL Injection.</p>
+
+<form method="POST">
+    <textarea name="sim_input" rows="5" cols="80" placeholder="Try typing an attack script..."></textarea><br><br>
+    <button type="submit">Submit</button>
+</form>
+
+{% if result %}
+    <div style="margin-top: 1rem; font-weight: bold;">{{ result }}</div>
+{% endif %}
+{% endblock %}

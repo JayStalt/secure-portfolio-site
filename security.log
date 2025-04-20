@@ -224,3 +224,60 @@
 [2025-04-20 09:53:37,732] INFO: 127.0.0.1 - - [20/Apr/2025 09:53:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 [2025-04-20 09:54:07,478] INFO: 127.0.0.1 - - [20/Apr/2025 09:54:07] "GET /dashboard HTTP/1.1" 200 -
 [2025-04-20 09:54:07,552] INFO: 127.0.0.1 - - [20/Apr/2025 09:54:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:56:33,560] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-20 09:56:33,560] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-20 09:56:33,561] INFO:  * Restarting with stat
+[2025-04-20 09:56:33,904] WARNING:  * Debugger is active!
+[2025-04-20 09:56:33,906] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 09:56:56,637] INFO: 127.0.0.1 - - [20/Apr/2025 09:56:56] "GET /tools/headers HTTP/1.1" 200 -
+[2025-04-20 09:56:56,734] INFO: 127.0.0.1 - - [20/Apr/2025 09:56:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:56:58,543] INFO: 127.0.0.1 - - [20/Apr/2025 09:56:58] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 09:56:58,851] INFO: 127.0.0.1 - - [20/Apr/2025 09:56:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:57:03,137] INFO: 127.0.0.1 - - [20/Apr/2025 09:57:03] "GET /tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 09:57:03,226] INFO: 127.0.0.1 - - [20/Apr/2025 09:57:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:57:23,622] INFO: 127.0.0.1 - - [20/Apr/2025 09:57:23] "[35m[1mPOST /tools/threat-sim HTTP/1.1[0m" 500 -
+[2025-04-20 09:57:23,922] INFO: 127.0.0.1 - - [20/Apr/2025 09:57:23] "GET /tools/threat-sim?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2025-04-20 09:57:23,937] INFO: 127.0.0.1 - - [20/Apr/2025 09:57:23] "GET /tools/threat-sim?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2025-04-20 09:57:24,253] INFO: 127.0.0.1 - - [20/Apr/2025 09:57:24] "GET /tools/threat-sim?__debugger__=yes&cmd=resource&f=console.png&s=diYLrc3CplaH46w6bMWv HTTP/1.1" 200 -
+[2025-04-20 09:57:24,516] INFO: 127.0.0.1 - - [20/Apr/2025 09:57:24] "GET /tools/threat-sim?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2025-04-20 09:58:24,016] INFO:  * Detected change in 'C:\\Users\\jamis\\PycharmProjects\\secure_portfolio\\app\\routes.py', reloading
+[2025-04-20 09:58:24,054] INFO:  * Restarting with stat
+[2025-04-20 09:58:24,413] WARNING:  * Debugger is active!
+[2025-04-20 09:58:24,416] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 09:58:34,722] INFO:  * Detected change in 'C:\\Users\\jamis\\PycharmProjects\\secure_portfolio\\app\\routes.py', reloading
+[2025-04-20 09:58:34,755] INFO:  * Restarting with stat
+[2025-04-20 09:58:35,096] WARNING:  * Debugger is active!
+[2025-04-20 09:58:35,098] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 09:58:38,523] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-20 09:58:38,523] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-20 09:58:38,524] INFO:  * Restarting with stat
+[2025-04-20 09:58:38,863] WARNING:  * Debugger is active!
+[2025-04-20 09:58:38,865] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 09:58:51,362] INFO: Simulated threat input from admin@example.com: <script>alert('xss')</script>
+[2025-04-20 09:58:51,367] INFO: 127.0.0.1 - - [20/Apr/2025 09:58:51] "POST /tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 09:58:51,457] INFO: 127.0.0.1 - - [20/Apr/2025 09:58:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:58:58,470] INFO: Simulated threat input from admin@example.com: <script>alert('xss')</script>
+[2025-04-20 09:58:58,470] INFO: 127.0.0.1 - - [20/Apr/2025 09:58:58] "POST /tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 09:58:58,780] INFO: 127.0.0.1 - - [20/Apr/2025 09:58:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:59:09,281] INFO: Simulated threat input from admin@example.com: ' OR '1'='1
+[2025-04-20 09:59:09,281] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:09] "POST /tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 09:59:09,292] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:59:21,206] INFO: Simulated threat input from admin@example.com: DROP TABLE users;
+[2025-04-20 09:59:21,206] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:21] "POST /tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 09:59:21,510] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:59:28,803] INFO: Simulated threat input from admin@example.com: <?php echo "hacked"; ?>
+[2025-04-20 09:59:28,804] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:28] "POST /tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 09:59:28,816] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:59:36,366] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:36] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 09:59:36,671] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:59:40,139] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:40] "GET /admin/logs HTTP/1.1" 200 -
+[2025-04-20 09:59:40,225] INFO: 127.0.0.1 - - [20/Apr/2025 09:59:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:00:09,740] INFO: 127.0.0.1 - - [20/Apr/2025 10:00:09] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 10:00:09,818] INFO: 127.0.0.1 - - [20/Apr/2025 10:00:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:00:10,958] INFO: 127.0.0.1 - - [20/Apr/2025 10:00:10] "GET /tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 10:00:11,274] INFO: 127.0.0.1 - - [20/Apr/2025 10:00:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:00:21,859] INFO: Simulated threat input from admin@example.com: <script>alert('xss')</script>
+[2025-04-20 10:00:21,860] INFO: 127.0.0.1 - - [20/Apr/2025 10:00:21] "POST /tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 10:00:21,869] INFO: 127.0.0.1 - - [20/Apr/2025 10:00:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

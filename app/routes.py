@@ -16,6 +16,7 @@ from flask import request
 import base64
 import json
 import jwt  # PyJWT
+from flask import current_app
 
 main = Blueprint('main', __name__)
 
@@ -265,3 +266,24 @@ def jwt_decoder():
             error = str(e)
 
     return render_template('tools_jwt.html', decoded=decoded, error=error)
+
+@main.route('/tools/threat-sim', methods=['GET', 'POST'])
+@login_required
+def threat_sim():
+    result = None
+    error = None
+
+    if request.method == 'POST':
+        user_input = request.form.get('sim_input')
+
+        # Simulated threat detection
+        threats = ['<script>', 'DROP TABLE', 'SELECT * FROM', '1=1', '--', ' OR ', ';', '<?php']
+        detected = [t for t in threats if t.lower() in user_input.lower()]
+
+        if detected:
+            result = f"🚨 Threat simulation detected: {', '.join(detected)}"
+            current_app.logger.info(f"Simulated threat input from {current_user.email}: {user_input}")
+        else:
+            result = "✅ Input is clean. No threats detected."
+
+    return render_template('tools_threat_sim.html', result=result, error=error)
