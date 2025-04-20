@@ -144,3 +144,65 @@
 [2025-04-16 15:30:37,617] INFO: 127.0.0.1 - - [16/Apr/2025 15:30:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 [2025-04-16 15:30:40,913] INFO: 127.0.0.1 - - [16/Apr/2025 15:30:40] "GET /projects HTTP/1.1" 200 -
 [2025-04-16 15:30:40,999] INFO: 127.0.0.1 - - [16/Apr/2025 15:30:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:39:33,031] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-20 09:39:33,031] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-20 09:39:33,032] INFO:  * Restarting with stat
+[2025-04-20 09:39:33,335] WARNING:  * Debugger is active!
+[2025-04-20 09:39:33,338] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 09:39:37,156] INFO: 127.0.0.1 - - [20/Apr/2025 09:39:37] "[35m[1mGET /admin/metrics HTTP/1.1[0m" 500 -
+[2025-04-20 09:39:37,262] INFO: 127.0.0.1 - - [20/Apr/2025 09:39:37] "GET /admin/metrics?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2025-04-20 09:39:37,396] INFO: 127.0.0.1 - - [20/Apr/2025 09:39:37] "GET /admin/metrics?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2025-04-20 09:39:37,733] INFO: 127.0.0.1 - - [20/Apr/2025 09:39:37] "GET /admin/metrics?__debugger__=yes&cmd=resource&f=console.png&s=rJW6RhBdPmRhHNjcEmsc HTTP/1.1" 200 -
+[2025-04-20 09:39:37,993] INFO: 127.0.0.1 - - [20/Apr/2025 09:39:37] "GET /admin/metrics?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2025-04-20 09:40:44,206] INFO:  * Detected change in 'C:\\Users\\jamis\\PycharmProjects\\secure_portfolio\\app\\__init__.py', reloading
+[2025-04-20 09:40:44,241] INFO:  * Restarting with stat
+[2025-04-20 09:40:44,552] WARNING:  * Debugger is active!
+[2025-04-20 09:40:44,554] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 09:41:15,929] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-20 09:41:15,929] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-20 09:41:15,930] INFO:  * Restarting with stat
+[2025-04-20 09:41:16,236] WARNING:  * Debugger is active!
+[2025-04-20 09:41:16,238] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 09:41:52,708] INFO: 127.0.0.1 - - [20/Apr/2025 09:41:52] "[32mGET /admin/metrics HTTP/1.1[0m" 302 -
+[2025-04-20 09:41:52,720] INFO: 127.0.0.1 - - [20/Apr/2025 09:41:52] "GET /login?next=/admin/metrics HTTP/1.1" 200 -
+[2025-04-20 09:41:53,047] INFO: 127.0.0.1 - - [20/Apr/2025 09:41:53] "GET /static/style.css HTTP/1.1" 200 -
+[2025-04-20 09:41:53,450] INFO: 127.0.0.1 - - [20/Apr/2025 09:41:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-04-20 09:41:54,749] INFO: Successful login: admin@example.com
+[2025-04-20 09:41:54,749] INFO: 127.0.0.1 - - [20/Apr/2025 09:41:54] "[32mPOST /login?next=/admin/metrics HTTP/1.1[0m" 302 -
+[2025-04-20 09:41:54,853] INFO: 127.0.0.1 - - [20/Apr/2025 09:41:54] "GET / HTTP/1.1" 200 -
+[2025-04-20 09:41:55,178] INFO: 127.0.0.1 - - [20/Apr/2025 09:41:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:41:58,881] INFO: 127.0.0.1 - - [20/Apr/2025 09:41:58] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 09:41:59,187] INFO: 127.0.0.1 - - [20/Apr/2025 09:41:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:42:02,446] INFO: 127.0.0.1 - - [20/Apr/2025 09:42:02] "[35m[1mGET /admin/metrics HTTP/1.1[0m" 500 -
+[2025-04-20 09:42:02,537] INFO: 127.0.0.1 - - [20/Apr/2025 09:42:02] "[36mGET /admin/metrics?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:42:02,678] INFO: 127.0.0.1 - - [20/Apr/2025 09:42:02] "[36mGET /admin/metrics?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2025-04-20 09:42:02,772] INFO: 127.0.0.1 - - [20/Apr/2025 09:42:02] "GET /admin/metrics?__debugger__=yes&cmd=resource&f=console.png&s=qMKnNZi2EzHsskmoF6vY HTTP/1.1" 200 -
+[2025-04-20 09:42:02,990] INFO: 127.0.0.1 - - [20/Apr/2025 09:42:02] "[36mGET /admin/metrics?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2025-04-20 09:42:43,164] INFO: 127.0.0.1 - - [20/Apr/2025 09:42:43] "[35m[1mGET /admin/metrics HTTP/1.1[0m" 500 -
+[2025-04-20 09:42:43,460] INFO: 127.0.0.1 - - [20/Apr/2025 09:42:43] "[36mGET /admin/metrics?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:42:43,475] INFO: 127.0.0.1 - - [20/Apr/2025 09:42:43] "[36mGET /admin/metrics?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2025-04-20 09:42:43,793] INFO: 127.0.0.1 - - [20/Apr/2025 09:42:43] "[36mGET /admin/metrics?__debugger__=yes&cmd=resource&f=console.png&s=qMKnNZi2EzHsskmoF6vY HTTP/1.1[0m" 304 -
+[2025-04-20 09:43:52,005] INFO: 127.0.0.1 - - [20/Apr/2025 09:43:52] "GET /admin/metrics HTTP/1.1" 200 -
+[2025-04-20 09:43:52,015] INFO: 127.0.0.1 - - [20/Apr/2025 09:43:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:44:56,217] INFO:  * Detected change in 'C:\\Users\\jamis\\PycharmProjects\\secure_portfolio\\app\\routes.py', reloading
+[2025-04-20 09:44:56,250] INFO:  * Restarting with stat
+[2025-04-20 09:44:56,586] WARNING:  * Debugger is active!
+[2025-04-20 09:44:56,588] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 09:45:11,005] INFO:  * Detected change in 'C:\\Users\\jamis\\PycharmProjects\\secure_portfolio\\app\\routes.py', reloading
+[2025-04-20 09:45:11,055] INFO:  * Restarting with stat
+[2025-04-20 09:47:37,532] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-20 09:47:37,532] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-20 09:47:37,533] INFO:  * Restarting with stat
+[2025-04-20 09:47:37,870] WARNING:  * Debugger is active!
+[2025-04-20 09:47:37,872] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 09:47:43,126] INFO: 127.0.0.1 - - [20/Apr/2025 09:47:43] "GET /tools/headers HTTP/1.1" 200 -
+[2025-04-20 09:47:43,231] INFO: 127.0.0.1 - - [20/Apr/2025 09:47:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:48:40,197] INFO: 127.0.0.1 - - [20/Apr/2025 09:48:40] "POST /tools/headers HTTP/1.1" 200 -
+[2025-04-20 09:48:40,211] INFO: 127.0.0.1 - - [20/Apr/2025 09:48:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:48:57,795] INFO: 127.0.0.1 - - [20/Apr/2025 09:48:57] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 09:48:58,097] INFO: 127.0.0.1 - - [20/Apr/2025 09:48:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 09:49:04,968] INFO: 127.0.0.1 - - [20/Apr/2025 09:49:04] "GET /projects HTTP/1.1" 200 -
+[2025-04-20 09:49:05,065] INFO: 127.0.0.1 - - [20/Apr/2025 09:49:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

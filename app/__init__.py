@@ -7,7 +7,7 @@ from config import Config
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
-login_manager.login_view = 'login'  # redirect if not logged in
+login_manager.login_view = 'main.login'  # redirect if not logged in
 login_manager.login_message_category = 'info'
 
 def create_app(config_class=Config):

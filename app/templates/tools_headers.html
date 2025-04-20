@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Header Analyzer{% endblock %}
+
+{% block content %}
+<h2>🔍 HTTP Header Analyzer</h2>
+
+<form method="POST" style="margin-bottom: 2rem;">
+    <input type="text" name="url" placeholder="https://example.com" required style="padding: 0.5rem; width: 300px;">
+    <button type="submit" style="padding: 0.5rem 1rem;">Analyze</button>
+</form>
+
+{% if error %}
+    <div class="flash danger">{{ error }}</div>
+{% endif %}
+
+{% if headers %}
+    <h3>Headers:</h3>
+    <ul style="font-family: monospace;">
+        {% for key, value in headers.items() %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

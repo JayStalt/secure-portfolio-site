@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Security Metrics{% endblock %}
+
+{% block content %}
+<h2>📊 Security Metrics Dashboard</h2>
+
+{% if metrics %}
+<ul style="list-style-type: none; padding: 0; font-size: 1.1rem;">
+    <li><strong>Total Login Attempts:</strong> {{ metrics.total_attempts }}</li>
+    <li><strong>Successful Logins:</strong> {{ metrics.successful_logins }}</li>
+    <li><strong>Failed Logins:</strong> {{ metrics.failed_logins }}</li>
+    <li><strong>Registered Users:</strong> {{ metrics.registered_users }}</li>
+    <li><strong>Unique Emails Logged In:</strong> {{ metrics.unique_logins }}</li>
+    <li><strong>Last Log Entry:</strong> {{ metrics.last_event }}</li>
+</ul>
+{% else %}
+<p>No metrics available yet.</p>
+{% endif %}
+{% endblock %}

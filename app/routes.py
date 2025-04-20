@@ -8,6 +8,11 @@ from app import db, bcrypt
 from flask_login import login_user, logout_user, login_required
 from flask_login import current_user
 from app.logger import log_event
+import os
+from collections import Counter
+from datetime import datetime
+import requests
+from flask import request
 
 main = Blueprint('main', __name__)
 
@@ -170,3 +175,61 @@ def view_logs():
 @main.route('/about')
 def about_me():
     return render_template('about.html')
+
+
+@main.route('/admin/metrics')
+@login_required
+def security_metrics():
+    if current_user.email != 'admin@example.com':
+        flash('Access denied.', 'danger')
+        return redirect(url_for('main.home'))
+
+    log_path = 'security.log'
+    if not os.path.exists(log_path):
+        return render_template('metrics.html', metrics=None)
+
+    with open(log_path, 'r') as f:
+        logs = f.readlines()
+
+    success_logins = [line for line in logs if "Successful login" in line]
+    failed_logins = [line for line in logs if "Failed login" in line]
+    registered = [line for line in logs if "New user registered" in line]
+
+    all_attempts = success_logins + failed_logins
+    latest_entry = logs[-1] if logs else "No activity yet."
+
+    unique_users = set()
+    for line in success_logins:
+        if "login:" in line:
+            email = line.split("login: ")[1].strip()
+            unique_users.add(email)
+
+    metrics = {
+        "total_attempts": len(all_attempts),
+        "successful_logins": len(success_logins),
+        "failed_logins": len(failed_logins),
+        "registered_users": len(registered),
+        "unique_logins": len(unique_users),
+        "last_event": latest_entry.strip()
+    }
+
+    return render_template('metrics.html', metrics=metrics)
+
+@main.route('/tools/headers', methods=['GET', 'POST'])
+@login_required
+def header_analyzer():
+    headers_result = None
+    error = None
+
+    if request.method == 'POST':
+        url = request.form.get('url')
+        if not url.startswith('http'):
+            url = 'https://' + url  # assume HTTPS
+
+        try:
+            response = requests.get(url, timeout=5)
+            headers_result = dict(response.headers)
+        except Exception as e:
+            error = str(e)
+
+    return render_template('tools_headers.html', headers=headers_result, error=error)
