@@ -78,25 +78,21 @@ def dashboard():
 @main.route('/admin/projects/new', methods=['GET', 'POST'])
 @login_required
 def add_project():
-    if current_user.email != 'admin@example.com':
-        flash('Access denied: Admins only.', 'danger')
-        return redirect(url_for('main.home'))
-
     form = ProjectForm()
     if form.validate_on_submit():
-        project = Project(
+        new_project = Project(
             title=form.title.data,
             description=form.description.data,
-            image_url=form.image_url.data or None,
-            project_url=form.project_url.data or None
+            image_url=form.image_url.data,
+            external_link=form.project_url.data,
+            category=form.category.data  # <-- NEW!
         )
-        db.session.add(project)
+        db.session.add(new_project)
         db.session.commit()
-        log_event(f"Admin {current_user.email} added project: {form.title.data}")
         flash('Project added successfully!', 'success')
-        return redirect(url_for('main.dashboard'))
+        return redirect(url_for('main.admin_projects'))
 
-    return render_template('add_project.html', form=form)
+    return render_template('admin_add_project.html', form=form)
 
 
 @main.route('/projects')
@@ -122,10 +118,6 @@ def admin_projects():
 @main.route('/admin/projects/edit/<int:project_id>', methods=['GET', 'POST'])
 @login_required
 def edit_project(project_id):
-    if current_user.email != 'admin@example.com':
-        flash('Access denied: Admins only.', 'danger')
-        return redirect(url_for('main.home'))
-
     project = Project.query.get_or_404(project_id)
     form = ProjectForm()
 
@@ -133,19 +125,20 @@ def edit_project(project_id):
         project.title = form.title.data
         project.description = form.description.data
         project.image_url = form.image_url.data
-        project.project_url = form.project_url.data
+        project.external_link = form.project_url.data
+        project.category = form.category.data  # ✅ NEW
         db.session.commit()
-        log_event(f"Admin {current_user.email} edited project ID {project_id}")
         flash('Project updated successfully!', 'success')
         return redirect(url_for('main.admin_projects'))
 
-    # Pre-fill the form with current data
-    form.title.data = project.title
-    form.description.data = project.description
-    form.image_url.data = project.image_url
-    form.project_url.data = project.project_url
+    elif request.method == 'GET':
+        form.title.data = project.title
+        form.description.data = project.description
+        form.image_url.data = project.image_url
+        form.project_url.data = project.external_link
+        form.category.data = project.category  # ✅ NEW
 
-    return render_template('edit_project.html', form=form, project=project)
+    return render_template('admin_edit_project.html', form=form, project=project)
 
 
 @main.route('/admin/projects/delete/<int:project_id>')

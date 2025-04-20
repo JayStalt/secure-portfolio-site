@@ -2,7 +2,7 @@
 {% block title %}Projects{% endblock %}
 
 {% block content %}
-<h2>🗂 Portfolio Projects</h2>
+<h2>Portfolio Projects</h2>
 <p>Explore my work across different disciplines.</p>
 
 <!-- Tabs -->
@@ -10,12 +10,12 @@
     <li><a href="#cyber">Cyber</a></li>
     <li><a href="#fullstack">Full Stack Dev</a></li>
     <li><a href="#games">Games</a></li>
-    <li><a href="#writing">✍Creative Writing</a></li>
+    <li><a href="#writing">Creative Writing</a></li>
 </ul>
 
 <!-- Tab Content Sections -->
 <div id="cyber" class="tab-content">
-    <h3>🔐 Cyber Projects</h3>
+    <h3>Cyber Projects</h3>
     {% for project in cyber %}
         <div class="project-card">
             <h4>{{ project.title }}</h4>
@@ -24,7 +24,7 @@
                 <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
             {% endif %}
             {% if project.project_url %}
-                <p><a href="{{ project.project_url }}" target="_blank">🔗 View Project</a></p>
+                <p><a href="{{ project.project_url }}" target="_blank">View Project</a></p>
             {% endif %}
         </div>
     {% else %}
@@ -33,7 +33,7 @@
 </div>
 
 <div id="fullstack" class="tab-content">
-    <h3>🌐 Full Stack Dev Projects</h3>
+    <h3>Full Stack Dev Projects</h3>
     {% for project in fullstack %}
         <div class="project-card">
             <h4>{{ project.title }}</h4>
@@ -42,7 +42,7 @@
                 <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
             {% endif %}
             {% if project.project_url %}
-                <p><a href="{{ project.project_url }}" target="_blank">🔗 View Project</a></p>
+                <p><a href="{{ project.project_url }}" target="_blank">View Project</a></p>
             {% endif %}
         </div>
     {% else %}
@@ -51,7 +51,7 @@
 </div>
 
 <div id="games" class="tab-content">
-    <h3>🎮 Game Projects</h3>
+    <h3>Game Projects</h3>
     {% for project in games %}
         <div class="project-card">
             <h4>{{ project.title }}</h4>
@@ -60,7 +60,7 @@
                 <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
             {% endif %}
             {% if project.project_url %}
-                <p><a href="{{ project.project_url }}" target="_blank">🔗 View Project</a></p>
+                <p><a href="{{ project.project_url }}" target="_blank">View Project</a></p>
             {% endif %}
         </div>
     {% else %}
@@ -69,7 +69,7 @@
 </div>
 
 <div id="writing" class="tab-content">
-    <h3>✍️ Creative Writing</h3>
+    <h3>Creative Writing</h3>
     {% for project in writing %}
         <div class="project-card">
             <h4>{{ project.title }}</h4>
@@ -78,7 +78,7 @@
                 <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
             {% endif %}
             {% if project.project_url %}
-                <p><a href="{{ project.project_url }}" target="_blank">📖 Read More</a></p>
+                <p><a href="{{ project.project_url }}" target="_blank">Read More</a></p>
             {% endif %}
         </div>
     {% else %}
