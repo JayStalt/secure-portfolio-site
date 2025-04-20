@@ -1,8 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 from app.models import User  # Make sure this import is at the top of forms.py
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField
-from wtforms.validators import DataRequired, Email
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, SelectField
+
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -33,4 +33,10 @@ class ProjectForm(FlaskForm):
     description = TextAreaField('Description', validators=[DataRequired()])
     image_url = StringField('Image URL (optional)')
     project_url = StringField('Project Link (optional)')
+    category = SelectField('Category', choices=[
+        ('cyber', 'Cyber'),
+        ('fullstack', 'Full Stack Dev'),
+        ('games', 'Games'),
+        ('writing', 'Creative Writing')
+    ], validators=[DataRequired()])
     submit = SubmitField('Add Project')

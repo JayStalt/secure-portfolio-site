@@ -281,3 +281,53 @@
 [2025-04-20 10:00:21,859] INFO: Simulated threat input from admin@example.com: <script>alert('xss')</script>
 [2025-04-20 10:00:21,860] INFO: 127.0.0.1 - - [20/Apr/2025 10:00:21] "POST /tools/threat-sim HTTP/1.1" 200 -
 [2025-04-20 10:00:21,869] INFO: 127.0.0.1 - - [20/Apr/2025 10:00:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:08:17,937] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-20 10:08:17,937] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-20 10:08:17,939] INFO:  * Restarting with stat
+[2025-04-20 10:08:18,287] WARNING:  * Debugger is active!
+[2025-04-20 10:08:18,290] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 10:08:22,549] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:22] "[32mPOST /tools/threat-sim HTTP/1.1[0m" 302 -
+[2025-04-20 10:08:22,557] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:22] "GET /login?next=/tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 10:08:22,886] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:08:24,698] INFO: Failed login attempt for email: admin@example.com
+[2025-04-20 10:08:24,698] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:24] "POST /login?next=/tools/threat-sim HTTP/1.1" 200 -
+[2025-04-20 10:08:24,707] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:08:30,964] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:30] "GET / HTTP/1.1" 200 -
+[2025-04-20 10:08:31,273] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:08:32,871] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:32] "GET /about HTTP/1.1" 200 -
+[2025-04-20 10:08:32,932] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:08:35,197] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:35] "GET /projects HTTP/1.1" 200 -
+[2025-04-20 10:08:35,276] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:08:50,141] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:50] "GET /login HTTP/1.1" 200 -
+[2025-04-20 10:08:50,447] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:08:53,785] INFO: Failed login attempt for email: admin@example.com
+[2025-04-20 10:08:53,787] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:53] "POST /login HTTP/1.1" 200 -
+[2025-04-20 10:08:53,797] INFO: 127.0.0.1 - - [20/Apr/2025 10:08:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:09:00,450] INFO: 127.0.0.1 - - [20/Apr/2025 10:09:00] "GET / HTTP/1.1" 200 -
+[2025-04-20 10:09:00,753] INFO: 127.0.0.1 - - [20/Apr/2025 10:09:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:09:35,525] INFO: 127.0.0.1 - - [20/Apr/2025 10:09:35] "GET /login HTTP/1.1" 200 -
+[2025-04-20 10:09:35,585] INFO: 127.0.0.1 - - [20/Apr/2025 10:09:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:09:38,115] INFO: Failed login attempt for email: admin@example.com
+[2025-04-20 10:09:38,116] INFO: 127.0.0.1 - - [20/Apr/2025 10:09:38] "POST /login HTTP/1.1" 200 -
+[2025-04-20 10:09:38,428] INFO: 127.0.0.1 - - [20/Apr/2025 10:09:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:13:16,434] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-20 10:13:16,434] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-20 10:13:16,434] INFO:  * Restarting with stat
+[2025-04-20 10:13:16,784] WARNING:  * Debugger is active!
+[2025-04-20 10:13:16,787] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 10:13:19,948] INFO: Successful login: admin@example.com
+[2025-04-20 10:13:19,949] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:19] "[32mPOST /login HTTP/1.1[0m" 302 -
+[2025-04-20 10:13:19,957] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:19] "GET / HTTP/1.1" 200 -
+[2025-04-20 10:13:20,094] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:13:25,516] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:25] "GET / HTTP/1.1" 200 -
+[2025-04-20 10:13:25,579] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:13:27,358] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:27] "GET /about HTTP/1.1" 200 -
+[2025-04-20 10:13:27,666] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:13:29,596] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:29] "GET /projects HTTP/1.1" 200 -
+[2025-04-20 10:13:29,646] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:13:30,792] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:30] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 10:13:31,095] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:13:56,854] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:56] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 10:13:56,862] INFO: 127.0.0.1 - - [20/Apr/2025 10:13:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

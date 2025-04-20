@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<h2>🗂 Portfolio Projects</h2>
+<p>Explore my work across different disciplines.</p>
+
+<!-- Tabs -->
+<ul class="tabs">
+    <li><a href="#cyber">Cyber</a></li>
+    <li><a href="#fullstack">Full Stack Dev</a></li>
+    <li><a href="#games">Games</a></li>
+    <li><a href="#writing">✍Creative Writing</a></li>
+</ul>
+
+<!-- Tab Content Sections -->
+<div id="cyber" class="tab-content">
+    <h3>🔐 Cyber Projects</h3>
+    {% for project in cyber %}
+        <div class="project-card">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.description }}</p>
+            {% if project.image_url %}
+                <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
+            {% endif %}
+            {% if project.project_url %}
+                <p><a href="{{ project.project_url }}" target="_blank">🔗 View Project</a></p>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No cyber projects yet.</p>
+    {% endfor %}
+</div>
+
+<div id="fullstack" class="tab-content">
+    <h3>🌐 Full Stack Dev Projects</h3>
+    {% for project in fullstack %}
+        <div class="project-card">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.description }}</p>
+            {% if project.image_url %}
+                <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
+            {% endif %}
+            {% if project.project_url %}
+                <p><a href="{{ project.project_url }}" target="_blank">🔗 View Project</a></p>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No full stack projects yet.</p>
+    {% endfor %}
+</div>
+
+<div id="games" class="tab-content">
+    <h3>🎮 Game Projects</h3>
+    {% for project in games %}
+        <div class="project-card">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.description }}</p>
+            {% if project.image_url %}
+                <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
+            {% endif %}
+            {% if project.project_url %}
+                <p><a href="{{ project.project_url }}" target="_blank">🔗 View Project</a></p>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No games listed yet.</p>
+    {% endfor %}
+</div>
+
+<div id="writing" class="tab-content">
+    <h3>✍️ Creative Writing</h3>
+    {% for project in writing %}
+        <div class="project-card">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.description }}</p>
+            {% if project.image_url %}
+                <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
+            {% endif %}
+            {% if project.project_url %}
+                <p><a href="{{ project.project_url }}" target="_blank">📖 Read More</a></p>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No writing projects yet.</p>
+    {% endfor %}
+</div>
+
+<!-- Minimal Tab Switcher Script -->
+<script>
+    const tabs = document.querySelectorAll('.tabs a');
+    const contents = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            contents.forEach(c => c.style.display = 'none');
+            tabs.forEach(t => t.classList.remove('active'));
+            document.querySelector(this.getAttribute('href')).style.display = 'block';
+            this.classList.add('active');
+        });
+    });
+    // Show first tab by default
+    document.querySelector('.tabs a').click();
+</script>
+
+<style>
+    .tabs {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .tabs a {
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        background: #eee;
+        border-radius: 5px;
+    }
+
+    .tabs a.active {
+        background: #333;
+        color: #fff;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .project-card {
+        background: #f9f9f9;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}

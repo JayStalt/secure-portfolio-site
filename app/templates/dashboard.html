@@ -5,16 +5,27 @@
 <h2>Welcome, Admin</h2>
 <p>You have access to the secure admin dashboard.</p>
 
+<h3>Project Management</h3>
 <ul>
-    <li><a href="#">Manage Projects </a></li>
-    <li><a href="#">View Activity Logs </a></li>
-    <li><a href="#">Site Configuration </a></li>
     <li><a href="{{ url_for('main.add_project') }}">Add New Project</a></li>
     <li><a href="{{ url_for('main.admin_projects') }}">Manage All Projects</a></li>
+</ul>
+
+<h3>Site Activity & Logs</h3>
+<ul>
     <li><a href="{{ url_for('main.view_logs') }}">View Security Logs</a></li>
     <li><a href="{{ url_for('main.security_metrics') }}">View Security Metrics</a></li>
+</ul>
+
+<h3>Cybersecurity Microtools</h3>
+<ul>
     <li><a href="{{ url_for('main.header_analyzer') }}">Header Analyzer</a></li>
     <li><a href="{{ url_for('main.jwt_decoder') }}">JWT Decoder</a></li>
     <li><a href="{{ url_for('main.threat_sim') }}">Threat Simulation</a></li>
+</ul>
+
+<h3>General Configuration</h3>
+<ul>
+    <li><a href="#">Site Settings (coming soon)</a></li>
 </ul>
 {% endblock %}

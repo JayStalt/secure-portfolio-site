@@ -101,8 +101,11 @@ def add_project():
 
 @main.route('/projects')
 def projects():
-    all_projects = Project.query.all()
-    return render_template('projects.html', projects=all_projects)
+    cyber = Project.query.filter_by(category='cyber').all()
+    fullstack = Project.query.filter_by(category='fullstack').all()
+    games = Project.query.filter_by(category='games').all()
+    writing = Project.query.filter_by(category='writing').all()
+    return render_template('projects_tabs.html', cyber=cyber, fullstack=fullstack, games=games, writing=writing)
 
 
 @main.route('/admin/projects')

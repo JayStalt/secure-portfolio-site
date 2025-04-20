@@ -21,8 +21,9 @@ class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text, nullable=False)
-    image_url = db.Column(db.String(200))
-    project_url = db.Column(db.String(200))
+    image_url = db.Column(db.String(255))
+    external_link = db.Column(db.String(255))
+    category = db.Column(db.String(50), nullable=False)  # NEW
 
     def __repr__(self):
         return f"Project('{self.title}')"
