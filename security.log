@@ -455,3 +455,34 @@
 [2025-04-20 10:59:44,442] INFO: 127.0.0.1 - - [20/Apr/2025 10:59:44] "GET /about HTTP/1.1" 200 -
 [2025-04-20 10:59:44,452] INFO: 127.0.0.1 - - [20/Apr/2025 10:59:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 [2025-04-20 10:59:44,702] INFO: 127.0.0.1 - - [20/Apr/2025 10:59:44] "GET /static/images/professional%20headshot%20-%20Copy.png HTTP/1.1" 200 -
+[2025-04-20 11:00:28,424] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-20 11:00:28,424] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-20 11:00:28,424] INFO:  * Restarting with stat
+[2025-04-20 11:00:28,771] WARNING:  * Debugger is active!
+[2025-04-20 11:00:28,773] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 11:00:28,803] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:28] "GET / HTTP/1.1" 200 -
+[2025-04-20 11:00:28,898] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:00:31,269] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:31] "GET / HTTP/1.1" 200 -
+[2025-04-20 11:00:31,315] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:00:33,471] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:33] "GET /about HTTP/1.1" 200 -
+[2025-04-20 11:00:33,787] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:33] "[36mGET /static/images/professional%20headshot%20-%20Copy.png HTTP/1.1[0m" 304 -
+[2025-04-20 11:00:33,787] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:00:39,083] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:39] "GET /projects HTTP/1.1" 200 -
+[2025-04-20 11:00:39,162] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:00:42,746] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:42] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 11:00:43,059] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:00:57,348] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:57] "GET /admin/logs HTTP/1.1" 200 -
+[2025-04-20 11:00:57,418] INFO: 127.0.0.1 - - [20/Apr/2025 11:00:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:01:06,089] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:06] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 11:01:06,178] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:01:07,533] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:07] "GET /admin/metrics HTTP/1.1" 200 -
+[2025-04-20 11:01:07,846] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:01:18,501] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:18] "GET / HTTP/1.1" 200 -
+[2025-04-20 11:01:18,574] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:01:19,581] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:19] "GET /projects HTTP/1.1" 200 -
+[2025-04-20 11:01:19,882] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:01:20,612] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:20] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-20 11:01:20,705] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 11:01:22,048] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:22] "GET / HTTP/1.1" 200 -
+[2025-04-20 11:01:22,356] INFO: 127.0.0.1 - - [20/Apr/2025 11:01:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
