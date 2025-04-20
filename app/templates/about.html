@@ -4,11 +4,13 @@
 {% block content %}
     <section style="padding: 2rem 1rem; text-align: center;">
         <h1>👋 About Me</h1>
+        <div style="max-width: 600px; margin: 2rem auto; text-align: center;">
+            <img src="{{ url_for('static', filename='images/professional headshot - Copy.png') }}" alt="Jamison Stalter" style="width: 200px; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.15); margin-bottom: 1rem;">
+        </div>
+
         <p style="max-width: 600px; margin: 1rem auto;">
-            I'm <strong>Jamison Stalter</strong> — a USMC veteran, cybersecurity graduate student, and full-stack
-            developer.
-            I built this secure portfolio platform from scratch to highlight my technical strengths, clean code
-            practices, and real-world deployment skills.
+            I'm <strong>Jamison Stalter</strong> — a USMC veteran, proud father and fiancé, and a cybersecurity graduate student with a background in full-stack development and game design.
+            I created this secure portfolio platform from the ground up to showcase my technical skills, passion for building useful and creative tools, and commitment to clean, real-world-ready code.
         </p>
 
         <a href="{{ url_for('main.projects') }}"

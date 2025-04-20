@@ -442,3 +442,16 @@
 [2025-04-20 10:42:28,990] INFO: 127.0.0.1 - - [20/Apr/2025 10:42:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 [2025-04-20 10:42:30,252] INFO: 127.0.0.1 - - [20/Apr/2025 10:42:30] "GET /projects HTTP/1.1" 200 -
 [2025-04-20 10:42:30,564] INFO: 127.0.0.1 - - [20/Apr/2025 10:42:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:54:31,971] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-04-20 10:54:31,971] INFO: [33mPress CTRL+C to quit[0m
+[2025-04-20 10:54:31,972] INFO:  * Restarting with stat
+[2025-04-20 10:54:32,315] WARNING:  * Debugger is active!
+[2025-04-20 10:54:32,317] INFO:  * Debugger PIN: 141-073-717
+[2025-04-20 10:54:34,743] INFO: 127.0.0.1 - - [20/Apr/2025 10:54:34] "GET /projects HTTP/1.1" 200 -
+[2025-04-20 10:54:34,832] INFO: 127.0.0.1 - - [20/Apr/2025 10:54:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:54:35,742] INFO: 127.0.0.1 - - [20/Apr/2025 10:54:35] "GET /about HTTP/1.1" 200 -
+[2025-04-20 10:54:36,050] INFO: 127.0.0.1 - - [20/Apr/2025 10:54:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:59:44,442] INFO: 127.0.0.1 - - [20/Apr/2025 10:59:44] "GET /about HTTP/1.1" 200 -
+[2025-04-20 10:59:44,452] INFO: 127.0.0.1 - - [20/Apr/2025 10:59:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-04-20 10:59:44,702] INFO: 127.0.0.1 - - [20/Apr/2025 10:59:44] "GET /static/images/professional%20headshot%20-%20Copy.png HTTP/1.1" 200 -
