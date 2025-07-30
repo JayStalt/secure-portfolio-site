@@ -8,6 +8,6 @@ persistent_dir = '/var/data'
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', f'sqlite:///{os.path.join(persistent_dir, "site.db")}')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:////var/data/site.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DEBUG = True
