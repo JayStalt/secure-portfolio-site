@@ -2,7 +2,7 @@
 
 A secure full-stack portfolio application built with Flask, featuring user authentication, admin-only project management, and real-time security logging. Designed to showcase your work and cybersecurity skills in one clean platform.
 
-[🌐 View Live Demo] https://secure-portfolio-site.onrender.com/projects
+[🌐 View Live Version] https://secure-portfolio-site.onrender.com/projects
 ---
 
 ## 🚀 Features
