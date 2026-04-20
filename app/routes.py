@@ -112,9 +112,19 @@ def add_project():
 def projects():
     cyber = Project.query.filter_by(category='cyber').all()
     fullstack = Project.query.filter_by(category='fullstack').all()
-    games = Project.query.filter_by(category='games').all()
+    gamedev = Project.query.filter(Project.category.in_(['games', 'gamedev'])).all()
+    gamedesign = Project.query.filter_by(category='gamedesign').all()
+    webdesign = Project.query.filter_by(category='webdesign').all()
     writing = Project.query.filter_by(category='writing').all()
-    return render_template('projects_tabs.html', cyber=cyber, fullstack=fullstack, games=games, writing=writing)
+    return render_template(
+        'projects_tabs.html',
+        cyber=cyber,
+        fullstack=fullstack,
+        gamedev=gamedev,
+        gamedesign=gamedesign,
+        webdesign=webdesign,
+        writing=writing
+    )
 
 
 @main.route('/admin/projects')

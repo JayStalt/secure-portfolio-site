@@ -7,9 +7,11 @@
 
 <!-- Tabs -->
 <ul class="tabs">
-    <li><a href="#cyber">Cyber</a></li>
-    <li><a href="#fullstack">Full Stack Dev</a></li>
-    <li><a href="#games">Games</a></li>
+    <li><a href="#cyber">Cybersecurity</a></li>
+    <li><a href="#fullstack">Full-Stack Development</a></li>
+    <li><a href="#gamedev">Game Development</a></li>
+    <li><a href="#gamedesign">Game Design</a></li>
+    <li><a href="#webdesign">Web Design</a></li>
     <li><a href="#writing">Creative Writing</a></li>
 </ul>
 
@@ -50,19 +52,29 @@
     {% endfor %}
 </div>
 
-<div id="games" class="tab-content">
-    <h3>Game Projects</h3>
-    {% for project in games %}
+<div id="gamedev" class="tab-content">
+    <h3>Game Development</h3>
+    {% for project in gamedesign %}
         <div class="project-card">
             <h4>{{ project.title }}</h4>
             <p>{{ project.description }}</p>
-            {% if project.image_url %}
-                <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
-            {% endif %}
-            {% if project.external_link %}
-                <p><a href="{{ project.external_link }}" target="_blank">View Project</a></p>
-            {% endif %}
         </div>
+    {% else %}
+        <p>No game design projects yet.</p>
+    {% endfor %}
+</div>
+
+<div id="webdesign" class="tab-content">
+    <h3>Web Design</h3>
+    {% for project in webdesign %}
+        <div class="project-card">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.description }}</p>
+        </div>
+    {% else %}
+        <p>No web design projects yet.</p>
+    {% endfor %}
+</div>
     {% else %}
         <p>No games listed yet.</p>
     {% endfor %}
