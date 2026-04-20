@@ -5,7 +5,6 @@
 <h2>Portfolio Projects</h2>
 <p>Explore my work across different disciplines.</p>
 
-<!-- Tabs -->
 <ul class="tabs">
     <li><a href="#cyber">Cybersecurity</a></li>
     <li><a href="#fullstack">Full-Stack Development</a></li>
@@ -15,9 +14,9 @@
     <li><a href="#writing">Creative Writing</a></li>
 </ul>
 
-<!-- Tab Content Sections -->
+<!-- Cyber -->
 <div id="cyber" class="tab-content">
-    <h3>Cyber Projects</h3>
+    <h3>Cybersecurity</h3>
     {% for project in cyber %}
         <div class="project-card">
             <h4>{{ project.title }}</h4>
@@ -30,12 +29,13 @@
             {% endif %}
         </div>
     {% else %}
-        <p>No cyber projects yet.</p>
+        <p>No cybersecurity projects yet.</p>
     {% endfor %}
 </div>
 
+<!-- Full Stack -->
 <div id="fullstack" class="tab-content">
-    <h3>Full Stack Dev Projects</h3>
+    <h3>Full-Stack Development</h3>
     {% for project in fullstack %}
         <div class="project-card">
             <h4>{{ project.title }}</h4>
@@ -48,38 +48,68 @@
             {% endif %}
         </div>
     {% else %}
-        <p>No full stack projects yet.</p>
+        <p>No full-stack projects yet.</p>
     {% endfor %}
 </div>
 
+<!-- Game Dev -->
 <div id="gamedev" class="tab-content">
     <h3>Game Development</h3>
+    {% for project in gamedev %}
+        <div class="project-card">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.description }}</p>
+            {% if project.image_url %}
+                <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
+            {% endif %}
+            {% if project.external_link %}
+                <p><a href="{{ project.external_link }}" target="_blank">View Project</a></p>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No game development projects yet.</p>
+    {% endfor %}
+</div>
+
+<!-- Game Design -->
+<div id="gamedesign" class="tab-content">
+    <h3>Game Design</h3>
     {% for project in gamedesign %}
         <div class="project-card">
             <h4>{{ project.title }}</h4>
             <p>{{ project.description }}</p>
+            {% if project.image_url %}
+                <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
+            {% endif %}
+            {% if project.external_link %}
+                <p><a href="{{ project.external_link }}" target="_blank">View Project</a></p>
+            {% endif %}
         </div>
     {% else %}
         <p>No game design projects yet.</p>
     {% endfor %}
 </div>
 
+<!-- Web Design -->
 <div id="webdesign" class="tab-content">
     <h3>Web Design</h3>
     {% for project in webdesign %}
         <div class="project-card">
             <h4>{{ project.title }}</h4>
             <p>{{ project.description }}</p>
+            {% if project.image_url %}
+                <img src="{{ project.image_url }}" alt="{{ project.title }}" style="max-width: 300px;">
+            {% endif %}
+            {% if project.external_link %}
+                <p><a href="{{ project.external_link }}" target="_blank">View Project</a></p>
+            {% endif %}
         </div>
     {% else %}
         <p>No web design projects yet.</p>
     {% endfor %}
 </div>
-    {% else %}
-        <p>No games listed yet.</p>
-    {% endfor %}
-</div>
 
+<!-- Writing -->
 <div id="writing" class="tab-content">
     <h3>Creative Writing</h3>
     {% for project in writing %}
@@ -98,20 +128,23 @@
     {% endfor %}
 </div>
 
-<!-- Minimal Tab Switcher Script -->
 <script>
     const tabs = document.querySelectorAll('.tabs a');
     const contents = document.querySelectorAll('.tab-content');
+
     tabs.forEach(tab => {
         tab.addEventListener('click', function(e) {
             e.preventDefault();
+
             contents.forEach(c => c.style.display = 'none');
             tabs.forEach(t => t.classList.remove('active'));
+
             document.querySelector(this.getAttribute('href')).style.display = 'block';
             this.classList.add('active');
         });
     });
-    // Show first tab by default
+
+    // Default tab
     document.querySelector('.tabs a').click();
 </script>
 
@@ -122,6 +155,7 @@
         display: flex;
         gap: 1rem;
         margin-bottom: 1rem;
+        flex-wrap: wrap;
     }
 
     .tabs a {

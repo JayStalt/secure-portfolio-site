@@ -35,9 +35,11 @@ class ProjectForm(FlaskForm):
     project_url = StringField('Project Link (optional)')
     external_link = StringField('External Link (optional)')
     category = SelectField('Category', choices=[
-        ('cyber', 'Cyber'),
-        ('fullstack', 'Full Stack Dev'),
-        ('games', 'Games'),
+        ('cyber', 'Cybersecurity'),
+        ('fullstack', 'Full-Stack Development'),
+        ('gamedev', 'Game Development'),
+        ('gamedesign', 'Game Design'),
+        ('webdesign', 'Web Design'),
         ('writing', 'Creative Writing')
     ], validators=[DataRequired()])
     submit = SubmitField('Add Project')
