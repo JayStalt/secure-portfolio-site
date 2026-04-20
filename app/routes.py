@@ -1,9 +1,10 @@
-from flask import render_template, redirect, url_for, flash, request
+from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import login_user, logout_user, login_required, current_user
 from app import db, bcrypt
-from app.main import bp as main
 from app.models import Project, User
 from app.forms import LoginForm, RegisterForm, ProjectForm
+
+main = Blueprint('main', __name__)
 
 
 # ----------------------
@@ -31,6 +32,7 @@ def projects():
     cyber = Project.query.filter_by(category='cyber').all()
     fullstack = Project.query.filter_by(category='fullstack').all()
 
+    # supports both old "games" and new "gamedev"
     gamedev = Project.query.filter(
         Project.category.in_(['games', 'gamedev'])
     ).all()
@@ -95,11 +97,13 @@ def register():
 
     if form.validate_on_submit():
         hashed_pw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+
         user = User(
             username=form.username.data,
             email=form.email.data,
             password=hashed_pw
         )
+
         db.session.add(user)
         db.session.commit()
 
