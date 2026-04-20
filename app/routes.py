@@ -20,7 +20,9 @@ def home():
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('main.home'))
+        if current_user.email == 'admin@example.com':
+            return redirect(url_for('main.dashboard'))
+        return redirect(url_for('main.projects'))
 
     form = LoginForm()
 
@@ -29,6 +31,7 @@ def login():
 
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
+            log_event(f"Successful login: {user.email}")
             flash('Logged in successfully!', 'success')
 
             next_page = request.args.get('next')
@@ -37,10 +40,10 @@ def login():
 
             if user.email == 'admin@example.com':
                 return redirect(url_for('main.dashboard'))
-
             return redirect(url_for('main.projects'))
-        else:
-            flash('Login unsuccessful. Please check email and password.', 'danger')
+
+        log_event(f"Failed login attempt for email: {form.email.data}")
+        flash('Login unsuccessful. Please check email and password.', 'danger')
 
     return render_template('login.html', form=form)
 
@@ -61,7 +64,11 @@ def register():
 
     if form.validate_on_submit():
         hashed_pw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(username=form.username.data, email=form.email.data, password=hashed_pw)
+        user = User(
+            username=form.username.data,
+            email=form.email.data,
+            password=hashed_pw
+        )
         db.session.add(user)
         db.session.commit()
         log_event(f"New user registered: {form.email.data}")
@@ -79,28 +86,6 @@ def dashboard():
         return redirect(url_for('main.home'))
 
     return render_template('dashboard.html')
-
-
-@main.route('/admin/projects/new', methods=['GET', 'POST'])
-@login_required
-def add_project():
-    form = ProjectForm()
-
-    if form.validate_on_submit():
-        new_project = Project(
-            title=form.title.data,
-            description=form.description.data,
-            image_url=form.image_url.data,
-            project_url=form.project_url.data,
-            external_link=form.external_link.data,
-            category=form.category.data
-        )
-        db.session.add(new_project)
-        db.session.commit()
-        flash('Project added successfully!', 'success')
-        return redirect(url_for('main.admin_projects'))
-
-    return render_template('admin_add_project.html', form=form)
 
 
 @main.route('/projects')
@@ -132,6 +117,32 @@ def admin_projects():
 
     projects = Project.query.all()
     return render_template('admin_projects.html', projects=projects)
+
+
+@main.route('/admin/projects/new', methods=['GET', 'POST'])
+@login_required
+def add_project():
+    if current_user.email != 'admin@example.com':
+        flash('Access denied: Admins only.', 'danger')
+        return redirect(url_for('main.home'))
+
+    form = ProjectForm()
+
+    if form.validate_on_submit():
+        new_project = Project(
+            title=form.title.data,
+            description=form.description.data,
+            image_url=form.image_url.data,
+            project_url=form.project_url.data,
+            external_link=form.external_link.data,
+            category=form.category.data
+        )
+        db.session.add(new_project)
+        db.session.commit()
+        flash('Project added successfully!', 'success')
+        return redirect(url_for('main.admin_projects'))
+
+    return render_template('admin_add_project.html', form=form)
 
 
 @main.route('/admin/projects/edit/<int:project_id>', methods=['GET', 'POST'])
@@ -248,8 +259,8 @@ def header_analyzer():
     error = None
 
     if request.method == 'POST':
-        url = request.form.get('url')
-        if not url.startswith('http'):
+        url = request.form.get('url', '').strip()
+        if url and not url.startswith('http'):
             url = 'https://' + url
 
         try:
@@ -268,7 +279,7 @@ def jwt_decoder():
     error = None
 
     if request.method == 'POST':
-        token = request.form.get('jwt_token')
+        token = request.form.get('jwt_token', '').strip()
 
         try:
             parts = token.split('.')
@@ -288,3 +299,24 @@ def jwt_decoder():
             error = str(e)
 
     return render_template('tools_jwt.html', decoded=decoded, error=error)
+
+
+@main.route('/tools/threat-sim', methods=['GET', 'POST'])
+@login_required
+def threat_sim():
+    result = None
+    error = None
+
+    if request.method == 'POST':
+        user_input = request.form.get('sim_input', '')
+
+        threats = ['<script>', 'DROP TABLE', 'SELECT * FROM', '1=1', '--', ' OR ', ';', '<?php']
+        detected = [t for t in threats if t.lower() in user_input.lower()]
+
+        if detected:
+            result = f"Threat simulation detected: {', '.join(detected)}"
+            current_app.logger.info(f"Simulated threat input from {current_user.email}: {user_input}")
+        else:
+            result = "Input is clean. No threats detected."
+
+    return render_template('tools_threat_sim.html', result=result, error=error)
