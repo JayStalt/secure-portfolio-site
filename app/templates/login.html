@@ -5,14 +5,19 @@
     <h2>Login</h2>
     <form method="POST">
         {{ form.hidden_tag() }}
-        <p>
-            {{ form.email.label }}<br>
-            {{ form.email(size=32) }}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
+
+    <div>
+        {{ form.email.label }}
+        {{ form.email(class="form-control") }}
+    </div>
+
+    <div>
+        {{ form.password.label }}
+        {{ form.password(class="form-control") }}
+    </div>
+
+    <div>
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
 {% endblock %}
