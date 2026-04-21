@@ -1,39 +1,48 @@
 {% extends "base.html" %}
-{% block title %}Add New Project{% endblock %}
+{% block title %}Add Project{% endblock %}
 
 {% block content %}
 <h2>Add New Project</h2>
+
 <form method="POST">
     {{ form.hidden_tag() }}
 
-    <div>
+    <p>
         {{ form.title.label }}<br>
-        {{ form.title(size=50) }}
-    </div>
+        {{ form.title(size=60) }}
+    </p>
 
-    <div>
+    <p>
         {{ form.description.label }}<br>
-        {{ form.description(rows=4, cols=50) }}
-    </div>
+        {{ form.description(rows=6, cols=60) }}
+    </p>
 
-    <div>
+    <p>
         {{ form.image_url.label }}<br>
-        {{ form.image_url(size=50) }}
-    </div>
+        {{ form.image_url(size=60) }}
+    </p>
 
-    <div>
+    <p>
         {{ form.project_url.label }}<br>
-        {{ form.project_url(size=50) }}
-    </div>
+        {{ form.project_url(size=60) }}
+    </p>
 
-    <div>
+    <p>
+        {{ form.external_link.label }}<br>
+        {{ form.external_link(size=60) }}
+    </p>
+
+    <p>
         {{ form.category.label }}<br>
         {{ form.category() }}
-    </div>
+    </p>
 
-    <br>
-    <div>
-        {{ form.submit(class="btn btn-primary") }}
-    </div>
+    <p>
+        {{ form.display_order.label }}<br>
+        {{ form.display_order() }}
+        <br><small>Lower number shows higher on the page. Example: 1 = top priority.</small>
+    </p>
+
+    <p>{{ form.submit() }}</p>
 </form>
 {% endblock %}

@@ -90,12 +90,16 @@ def dashboard():
 
 @main.route('/projects')
 def projects():
-    cyber = Project.query.filter_by(category='cyber').all()
-    fullstack = Project.query.filter_by(category='fullstack').all()
-    gamedev = Project.query.filter(Project.category.in_(['games', 'gamedev'])).all()
-    gamedesign = Project.query.filter_by(category='gamedesign').all()
-    webdesign = Project.query.filter_by(category='webdesign').all()
-    writing = Project.query.filter_by(category='writing').all()
+    cyber = Project.query.filter_by(category='cyber').order_by(Project.display_order.asc(), Project.id.desc()).all()
+    fullstack = Project.query.filter_by(category='fullstack').order_by(Project.display_order.asc(), Project.id.desc()).all()
+
+    gamedev = Project.query.filter(
+        Project.category.in_(['games', 'gamedev'])
+    ).order_by(Project.display_order.asc(), Project.id.desc()).all()
+
+    gamedesign = Project.query.filter_by(category='gamedesign').order_by(Project.display_order.asc(), Project.id.desc()).all()
+    webdesign = Project.query.filter_by(category='webdesign').order_by(Project.display_order.asc(), Project.id.desc()).all()
+    writing = Project.query.filter_by(category='writing').order_by(Project.display_order.asc(), Project.id.desc()).all()
 
     return render_template(
         'projects_tabs.html',
@@ -115,7 +119,7 @@ def admin_projects():
         flash('Access denied: Admins only.', 'danger')
         return redirect(url_for('main.home'))
 
-    projects = Project.query.all()
+    projects = Project.query.order_by(Project.category.asc(), Project.display_order.asc(), Project.id.desc()).all()
     return render_template('admin_projects.html', projects=projects)
 
 
@@ -135,7 +139,8 @@ def add_project():
             image_url=form.image_url.data,
             project_url=form.project_url.data,
             external_link=form.external_link.data,
-            category=form.category.data
+            category=form.category.data,
+            display_order=form.display_order.data
         )
         db.session.add(new_project)
         db.session.commit()
@@ -162,6 +167,8 @@ def edit_project(project_id):
         project.project_url = form.project_url.data
         project.external_link = form.external_link.data
         project.category = form.category.data
+        project.display_order = form.display_order.data
+
         db.session.commit()
         flash('Project updated successfully!', 'success')
         return redirect(url_for('main.admin_projects'))
@@ -173,6 +180,7 @@ def edit_project(project_id):
         form.project_url.data = project.project_url
         form.external_link.data = project.external_link
         form.category.data = project.category
+        form.display_order.data = project.display_order
 
     return render_template('admin_edit_project.html', form=form, project=project)
 
@@ -309,7 +317,6 @@ def threat_sim():
 
     if request.method == 'POST':
         user_input = request.form.get('sim_input', '')
-
         threats = ['<script>', 'DROP TABLE', 'SELECT * FROM', '1=1', '--', ' OR ', ';', '<?php']
         detected = [t for t in threats if t.lower() in user_input.lower()]
 

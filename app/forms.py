@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 from app.models import User  # Make sure this import is at the top of forms.py
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField, SelectField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, SelectField, IntegerField
+from wtforms.validators import DataRequired, Email, Optional
 
 
 class LoginForm(FlaskForm):
@@ -29,11 +30,12 @@ class RegisterForm(FlaskForm):
 
 
 class ProjectForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired(), Length(min=2, max=100)])
+    title = StringField('Project Title', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[DataRequired()])
-    image_url = StringField('Image URL (optional)')
-    project_url = StringField('Project Link (optional)')
-    external_link = StringField('External Link (optional)')
+    image_url = StringField('Image URL (optional)', validators=[Optional()])
+    project_url = StringField('Project Link (optional)', validators=[Optional()])
+    external_link = StringField('External Link (optional)', validators=[Optional()])
+
     category = SelectField('Category', choices=[
         ('cyber', 'Cybersecurity'),
         ('fullstack', 'Full-Stack Development'),
@@ -42,4 +44,8 @@ class ProjectForm(FlaskForm):
         ('webdesign', 'Web Design'),
         ('writing', 'Creative Writing')
     ], validators=[DataRequired()])
+
+    # NEW
+    display_order = IntegerField('Display Order / Priority', default=100, validators=[DataRequired()])
+
     submit = SubmitField('Add Project')

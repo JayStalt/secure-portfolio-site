@@ -1,14 +1,30 @@
 {% extends "base.html" %}
-{% block title %}Add Project{% endblock %}
+{% block title %}Manage Projects{% endblock %}
 
 {% block content %}
-    <h2>Add New Project</h2>
-    <form method="POST">
-        {{ form.hidden_tag() }}
-        <p>{{ form.title.label }}<br>{{ form.title(size=50) }}</p>
-        <p>{{ form.description.label }}<br>{{ form.description(rows=5, cols=50) }}</p>
-        <p>{{ form.image_url.label }}<br>{{ form.image_url(size=50) }}</p>
-        <p>{{ form.project_url.label }}<br>{{ form.project_url(size=50) }}</p>
-        <p>{{ form.submit() }}</p>
-    </form>
+<h2>Manage Projects</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for project in projects %}
+        <tr>
+            <td>{{ project.title }}</td>
+            <td>{{ project.category }}</td>
+            <td>{{ project.display_order }}</td>
+            <td>
+                <a href="{{ url_for('main.edit_project', project_id=project.id) }}">Edit</a> |
+                <a href="{{ url_for('main.delete_project', project_id=project.id) }}" onclick="return confirm('Delete this project?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
