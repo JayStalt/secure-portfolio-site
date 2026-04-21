@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -25,7 +25,7 @@ def create_app():
     @app.errorhandler(500)
     def internal_error(error):
         app.logger.error(traceback.format_exc())
-        return jsonify({"error": "Internal Server Error"}), 500
+        return render_template("500.html", error=error), 500
 
     # Create tables if they don't exist
     with app.app_context():
